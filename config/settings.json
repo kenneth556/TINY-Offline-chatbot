@@ -1,0 +1,9 @@
+{
+  "model_path": "C:\\Users\\Blakka\\Documents\\CHATBOT\\model\\Tinyllama-1B-miniguanaco.Q2_K.gguf",
+  "model_type": "tinyllama",
+  "temperature": 0.5,
+  "max_tokens": 32,
+  "gpu_layers": 0,
+  "logging_enabled": false,
+  "context_length": 256
+}
