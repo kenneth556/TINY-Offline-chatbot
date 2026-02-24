@@ -1,104 +1,175 @@
-TinyllamaChatbot - Offline AI Chatbot
-A fully offline AI chatbot powered by the Tinyllama 1B Instruct v0.2 model using the ctransformers library. Features a clean Tkinter GUI with chat history, configurable settings, and complete offline operation.
+TinyllamaChatbot – Offline AI Chatbot
 
-Features
-Completely Offline: No internet connection required
-Local Tinyllama 1B Model: Uses GGUF quantized model for efficient inference
-Clean GUI: Tkinter-based interface with scrollable chat history
-Configurable: Adjustable temperature, max tokens, GPU layers, and more
-Chat History: Automatic logging with timestamps
-Cross-Platform: Works on Windows, macOS, and Linux
-Requirements
-Python 3.8 or higher
-At least 4GB RAM (8GB recommended)
-The Tinyllama 1B GGUF model file
-Installation
-Clone or download this project
+A fully offline AI chatbot powered by TinyLlama 1B Instruct v0.2 using the ctransformers library.
+Features a clean Tkinter GUI, chat history logging, configurable settings, and complete local operation.
 
-git clone <repository-url>
+🚀 Features
+
+Completely Offline – No internet required
+
+TinyLlama 1B GGUF Model – Efficient Q2_K quantized inference
+
+Clean Tkinter GUI – Scrollable chat interface
+
+Configurable Settings – Temperature, max tokens, GPU layers, and more
+
+Chat History Logging – Automatic timestamped logs
+
+Cross-Platform – Windows, macOS, Linux
+
+🖥 Requirements
+
+Python 3.8+
+
+Minimum 4GB RAM (8GB recommended)
+
+TinyLlama 1B GGUF model file
+
+📦 Installation
+1️⃣ Clone the Repository
+git clone <your-repo-url>
 cd TinyllamaChatbot
-Install dependencies
-
+2️⃣ Install Dependencies
 pip install -r requirements.txt
-Download the Tinyllama model
+3️⃣ Download the Model
 
-Download Tinyllama-1B-miniguanaco.Q2_K.gguf from Hugging Face
-Place it in the model/ directory
-The file should be located at: model/Tinyllama-1B-miniguanaco.Q2_K.gguf
-Usage
+Download:
+Tinyllama-1B-miniguanaco.Q2_K.gguf from Hugging Face
+
+Place it inside:
+
+model/Tinyllama-1B-miniguanaco.Q2_K.gguf
+▶ Usage
 Windows
-Double-click run_Tinyllama.bat or run:
+
+Double-click:
+
+run_Tinyllama.bat
+
+Or run:
 
 python main.py
-macOS/Linux
+macOS / Linux
 python3 main.py
-Configuration
-Edit config/settings.json to customize:
+⚙ Configuration
 
-model_path: Path to your GGUF model file
-temperature: Response creativity (0.1-1.0)
-max_tokens: Maximum response length
-gpu_layers: Number of layers to run on GPU (requires GPU support)
-logging_enabled: Enable/disable chat history logging
-Project Structure
+Edit:
+
+config/settings.json
+
+Options:
+
+model_path – Path to GGUF model
+
+temperature – Creativity (0.1 – 1.0)
+
+max_tokens – Maximum response length
+
+gpu_layers – Layers to offload to GPU
+
+logging_enabled – Enable/disable chat logging
+
+📂 Project Structure
 TinyllamaChatbot/
-├── main.py                 # Application entry point
-├── model/                  # Model files directory
+│
+├── main.py
+├── model/
 │   └── Tinyllama-1B-instruct-v0.2.Q2_K.gguf
-├── core/                   # Core functionality
-│   ├── chatbot.py         # Model loading and inference
-│   ├── prompt_manager.py  # Prompt formatting and history
-│   └── utils.py           # Utility functions
-├── gui/                    # GUI components
-│   └── interface.py       # Tkinter interface
-├── config/                 # Configuration files
-│   └── settings.json      # Application settings
-├── logs/                   # Log files
-│   ├── chat_history.txt   # Chat conversations
-│   └── Tinyllama_chatbot.log # Application logs
-├── requirements.txt        # Python dependencies
-├── README.md              # This file
-└── run_Tinyllama.bat        # Windows launcher
-GUI Features
-Status Indicator: Shows model loading status and current state
-Chat Display: Scrollable conversation history with timestamps
-Input Box: Multi-line text input with Enter to send
-Buttons: Send message, clear chat, and model info
-Menu Bar: Export history, clear data, and help options
-Keyboard Shortcuts
-Enter: Send message
-Shift+Enter: New line in input
-Ctrl+L: Clear chat (when implemented)
-Troubleshooting
+│
+├── core/
+│   ├── chatbot.py
+│   ├── prompt_manager.py
+│   └── utils.py
+│
+├── gui/
+│   └── interface.py
+│
+├── config/
+│   └── settings.json
+│
+├── logs/
+│   ├── chat_history.txt
+│   └── Tinyllama_chatbot.log
+│
+├── requirements.txt
+├── README.md
+└── run_Tinyllama.bat
+🖼 GUI Features
+
+Status Indicator (model loading state)
+
+Scrollable chat display with timestamps
+
+Multi-line input box
+
+Send / Clear buttons
+
+Menu bar (export history, clear logs, help)
+
+⌨ Keyboard Shortcuts
+
+Enter – Send message
+
+Shift + Enter – New line
+
+Ctrl + L – Clear chat (if implemented)
+
+🛠 Troubleshooting
 Model Not Loading
-Ensure the model file exists in the correct path
-Check that you have enough RAM (at least 4GB free)
-Verify the model file is not corrupted
+
+Ensure model path is correct
+
+Confirm at least 4GB free RAM
+
+Verify model file integrity
+
 Slow Performance
-Reduce max_tokens in settings
-Set gpu_layers to 0 if you don’t have a compatible GPU
-Close other memory-intensive applications
+
+Reduce max_tokens
+
+Set gpu_layers to 0 if no GPU
+
+Close memory-heavy applications
+
 GUI Issues
-Ensure tkinter is installed (usually comes with Python)
-Try running with python -m tkinter to test tkinter installation
-Model Information
-This chatbot uses the Tinyllama 1B Instruct v0.2 model in GGUF format:
 
-Size: ~2.8GB (Q2_K quantization)
+Ensure Tkinter is installed
+
+Test with:
+
+python -m tkinter
+🧠 Model Information
+
+Model: TinyLlama 1B Instruct v0.2
+
+Format: GGUF (Q2_K quantization)
+
+Size: ~2.8GB
+
 Context Length: 2048 tokens
-Language: Primarily English
+
+Primary Language: English
+
 License: Apache 2.0
-Logging
-The application logs:
 
-Chat conversations to logs/chat_history.txt
-Application events to logs/Tinyllama_chatbot.log
-Configurable via settings.json
-Contributing
-Feel free to submit issues and enhancement requests!
+📝 Logging
 
-License
-This project is open source. Please respect the Tinyllama model license terms.
+Chat logs → logs/chat_history.txt
 
-Disclaimer
-This is an offline AI chatbot for educational and personal use. The responses are generated by an AI model and may not always be accurate or appropriate.
+App logs → logs/Tinyllama_chatbot.log
+
+Controlled via settings.json
+
+🤝 Contributing
+
+Issues, improvements, and suggestions are welcome.
+
+📜 License
+
+Open-source project.
+Please respect the TinyLlama model license.
+
+⚠ Disclaimer
+
+This is an offline AI chatbot for educational and personal use.
+Responses are AI-generated and may not always be accurate or appropriate.
